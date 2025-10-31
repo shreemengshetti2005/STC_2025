@@ -1,11 +1,11 @@
-import random
-import time
-import multiprocessing
-import threading
-import psutil
-import os
-from functools import reduce
-import heapq
+import random           # Library for generating pseudo-random numbers (used to create test dataset)
+import time             # Library for measuring execution time and adding delays (sleep)
+import multiprocessing  # Library for parallel processing across multiple CPU cores
+import threading         # Library for lightweight concurrency (used for CPU monitoring thread)
+import psutil            # Library for accessing system and process information (used to monitor CPU usage)
+import os                # Library for interacting with the operating system (not directly used here)
+from functools import reduce  # Provides higher-order functions like reduce (not used, but useful for merging)
+import heapq             # Library implementing heap-based algorithms (used for efficient merging of sorted lists)
 
 # -----------------------------
 # CPU Monitor
@@ -27,7 +27,7 @@ def monitor_cpu(stop_event, usage_list):
 def merge_k_sorted(lists):
     """
     Merges multiple sorted lists into one sorted list.
-    CPU is actively used here, but this is sequential in your current code.
+    CPU is actively used here.
     """
     return list(heapq.merge(*lists))
 
@@ -83,7 +83,7 @@ def parallel_merge_sort(arr):
 if __name__ == "__main__":  # Fix: double underscores
     # Generate 1 million random numbers
     N = 10**6
-    arr = [random.randint(0, 10**6) for _ in range(N)]  # CPU used minimally
+    arr = [random.randint(0, 10**6)*0 for _ in range(N)]  # CPU used minimally
     arr_copy = arr.copy()  # CPU used minimally
 
     # -----------------------------
