@@ -83,7 +83,7 @@ def parallel_merge_sort(arr):
 if __name__ == "__main__":  # Fix: double underscores
     # Generate 1 million random numbers
     N = 10**6
-    arr = [random.randint(0, 10**6)*0 for _ in range(N)]  # CPU used minimally
+    arr = [random.randint(0, 10**6) for _ in range(N)]  # CPU used minimally
     arr_copy = arr.copy()  # CPU used minimally
 
     # -----------------------------
